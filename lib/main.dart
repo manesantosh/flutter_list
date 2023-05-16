@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'City.dart';
 
 void main() {
@@ -32,11 +31,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
     });
   }
 
@@ -77,7 +74,9 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
               child: Card(
                 child: ListTile(
-                  onTap: (){},
+                  onTap: (){
+
+                  },
                   leading: CircleAvatar(
                     backgroundImage: AssetImage("assets/${city[index].locationImage}"),
                   ),
