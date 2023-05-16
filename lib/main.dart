@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_list/RouteGenerator.dart';
 import 'City.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'City Of Dreams'),
+      initialRoute: './',
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
@@ -75,7 +77,11 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Card(
                 child: ListTile(
                   onTap: (){
-
+                    // pushing named route
+                    Navigator.of(context).pushNamed(
+                      './details_page',
+                      arguments: city[index]
+                    );
                   },
                   leading: CircleAvatar(
                     backgroundImage: AssetImage("assets/${city[index].locationImage}"),

@@ -13,14 +13,18 @@ class CityDetails extends StatelessWidget{
     return Scaffold(
         appBar: AppBar(
           title: Text(city.cityName),
+          leading: const BackButton(),
         ),
         body: Column(
           children: [
             Image.asset("assets/${city.locationImage}"),
-            Text(city.cityDescription,
-              style: const TextStyle(
-                fontSize: 12,
-                color: Colors.black
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
+              child: Text(city.cityDescription,
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: Colors.black
+                ),
               ),
             )
           ],
